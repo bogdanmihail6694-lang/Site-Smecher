@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premiul Misterios 🇷🇴</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="card">
+            <div class="emoji">🎁</div>
+
+            <h1>Premiul Misterios</h1>
+
+            <p>Ai curaj să afli ce ai câștigat?</p>
+
+            <button id="prizeButton">
+                Apasă pentru premiu
+            </button>
+
+            <div id="result" class="result" role="status" aria-live="polite">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const button = document.getElementById("prizeButton");
+        const result = document.getElementById("result");
+
+        button.addEventListener("click", function () {
+            result.textContent = "Ai castigat fix nimic 💀";
+            result.classList.add("show");
+            button.textContent = "Premiu revendicat";
+            button.disabled = true;
+        });
+    </script>
+
+</body>
+</html>

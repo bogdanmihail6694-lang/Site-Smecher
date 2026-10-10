@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+
+    /* Steagul Romaniei pe tot fundalul */
+    background: linear-gradient(
+        to right,
+        #002b7f 0%,
+        #002b7f 33.33%,
+        #fcd116 33.33%,
+        #fcd116 66.66%,
+        #ce1126 66.66%,
+        #ce1126 100%
+    );
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    /* Intunecam putin fundalul pentru contrast */
+    background: rgba(0, 0, 0, 0.22);
+}
+
+.card {
+    width: 100%;
+    max-width: 480px;
+    padding: 50px 35px;
+    text-align: center;
+
+    background: rgba(15, 15, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+
+    animation: appear 0.7s ease;
+}
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #d0d0d0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+button {
+    width: 100%;
+    padding: 18px 20px;
+
+    background: linear-gradient(135deg, #ffcf33, #ff9d00);
+    color: #181818;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 174, 0, 0.35);
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.75;
+}
+
+.result {
+    display: none;
+    margin-top: 28px;
+    padding: 20px 12px;
+
+    color: #ffffff;
+    background: rgba(206, 17, 38, 0.25);
+    border: 1px solid #ce1126;
+    border-radius: 10px;
+
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.result.show {
+    display: block;
+    animation: appear 0.4s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .result {
+        font-size: 20px;
+    }
+}
